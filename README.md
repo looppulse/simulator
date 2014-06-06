@@ -4,7 +4,7 @@ Beacon Event Simulator
 At [Loop Pulse](http://www.looppulse.com), we work with iBeacons to detect proximity and trigger events on our server side. However, simulating lots of beacon events using actual iBeacons and mobile devices is troublesome and hard to reproduce 100%. We need to build an application to simulate these beacon events which are normally sent by our mobile SDK.
 
 ### User flow
-  1. End user of this simulator will specify the sequence of the events via a JSON which can be part of the startup parameter or something uploadable. You define the content of this JSON.
+  1. End user of this simulator will specify the sequence of the events via a JSON which can be part of the startup parameter or something uploadable to your application. You define the content of this JSON.
   2. Beacon events are then sent via your application to a [Firebase](https://www.firebase.com/account/) end point. You can create a free developer account on Firebase.
 
 ### Specification of the events
