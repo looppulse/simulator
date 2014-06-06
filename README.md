@@ -15,6 +15,7 @@ At [Loop Pulse](http://www.looppulse.com), we work with iBeacons to detect proxi
     4. Type of beacon events: `didRangeBeacons` or `didExitRegion`
     5. Timestamp when the event was created on the device
     6. Visitor's UUID which is unique per device
+  * You can refer to a [sample JSON](sample_beacon_event.json)
   * Normally Loop Pulse's mobile SDK will send `didRangeBeacons` once every second for the first 5 seconds when the device is in proximity with the given iBeacon. Then there will be no more events until such device leaves the region and a `didExitRegion` will be fired. Please note that a device can be in proximity with more than one iBeacon at the same time and there can be multiple devices in proximity with the same iBeacon.
    
 ### Deliverables
