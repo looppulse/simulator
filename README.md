@@ -20,9 +20,9 @@ At [Loop Pulse](http://www.looppulse.com), we work with iBeacons to detect proxi
 ### Deliverables
   1. You can build this simulator as a Meteor, iOS or Android application.
   2. Provide visual feedback as simulated events are getting sent.
-  3. Describe the pro and con of your proposed solution.
+  3. Describe the pro's and con's of your proposed solution.
 
-  You should commit your code into a public github repo and include a README.md with details on how to launch your application and the pro and con of your solution.
+You should commit your code into a public github repo and include a README.md with details on how to launch your application and the pro and con of your solution.
   
 ### Bonus
   * Create a 'live' mode which simulates foot traffic in a retail store programmatically. Imagine a retail store where each product section will have an iBeacon installed. Your application will utilize artificial intelligence to simulate realistic pattern on how a store visitor would check out different product sections. The configuration file will include specifications like how many iBeacons are installed and how many visitors are expected. 
