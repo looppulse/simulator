@@ -1,7 +1,7 @@
 Beacon Event Simulator
 ======================
 
-At [Loop Pulse](http://www.looppulse.com), we work with iBeacons to detect proximity and trigger events on our server side. However, simulating lots of beacon events using actual iBeacons and mobile devices is troublesome and hard to reproduce 100%. We need to build an application to simulate these beacon events which are normally sent by our mobile SDK.
+At [Loop Pulse](http://www.looppulse.com), we work with iBeacons to detect proximity and trigger events on our server side. However, simulating lots of beacon events using actual iBeacons and mobile devices is troublesome and hard to reproduce 100%. We need to build an application to simulate these beacon events which are normally uploaded by our mobile SDK to our Firebase data store.
 
 ### User flow
   1. End user of this simulator will specify the sequence of the events via a JSON which can be part of the startup parameter or something uploadable to your application. You define the content of this JSON.
@@ -22,8 +22,9 @@ At [Loop Pulse](http://www.looppulse.com), we work with iBeacons to detect proxi
   1. You can build this simulator as a Meteor, iOS or Android application.
   2. Provide visual feedback as simulated events are getting sent.
   3. Describe the pro's and con's of your proposed solution.
+  4. Include relevant test cases.
 
-You should commit your code into a public github repo and include a README.md with details on how to launch your application and the pro and con of your solution.
+You should commit your code into a public github repo and include a README.md with details on how to launch your application and the written responses for the above deliverables.
   
 ### Bonus
   * Create a 'live' mode which simulates foot traffic in a retail store programmatically. Imagine a retail store where each product section will have an iBeacon installed. Your application will utilize artificial intelligence to simulate realistic pattern on how a store visitor would check out different product sections. The configuration file will include specifications like how many iBeacons are installed and how many visitors are expected. 
