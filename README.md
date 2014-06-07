@@ -1,4 +1,4 @@
-Beacon Event Simulator
+Beacon Event Simulator(Forked)
 ======================
 
 At [Loop Pulse](http://www.looppulse.com), we work with iBeacons to detect proximity and trigger events on our server side. However, simulating lots of beacon events using actual iBeacons and mobile devices is troublesome and hard to reproduce 100%. We need to build an application to simulate these beacon events which are normally uploaded by our mobile SDK to our Firebase data store.
