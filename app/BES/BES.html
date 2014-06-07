@@ -3,11 +3,29 @@
 </head>
 
 <body>
-  {{> hello}}
+
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+<template name="baseLayout">
+  {{> nav_bar}}
+  <div id="content">
+    {{> yield}}
+  </div>
+</template>
+
+<template name="nav_bar">
+	<nav>
+		<ul>
+			<li><a href="{{pathFor 'normal'}}">normal</a></li>
+			<li><a href="{{pathFor 'live'}}">live</a></li>
+		</ul>
+	</nav>
+</template>
+
+<template name="normal">
+	<h1>This is mormal page</h1>
+</template>
+
+<template name="live">
+	<h1>This is live page</h1>
 </template>
