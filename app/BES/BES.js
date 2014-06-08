@@ -21,7 +21,7 @@ if (Meteor.isClient) {
                     content.text( JSON.stringify(json, null, '    ') );
                     console.log(json);
                 }catch(ex){
-                    message.text('Error: potentially invalid JSON');
+                    message.text('Error: potentially invalid JSON \n(Please check if it is malformed JSON, eg. key is not included by double quotation mark, like {test: 1} or {\'test\': 1})');
                     console.log(ex);
                 }
             };
