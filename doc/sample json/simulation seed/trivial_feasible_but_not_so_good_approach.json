@@ -1,0 +1,50 @@
+[
+	{
+	  "type" : "didRangeBeacons",
+	  "minor" : 0,
+	  "major" : 100,
+	  "uuid" : "74278BDA-B644-4520-8F0C-720EAF059935",
+	  "visitor_uuid" : "D7AD6E44-7A9E-4A76-9227-C16903E549A5",
+	  "created_at" : "Wed Jun 04 2014 15:39:29 GMT+0800 (HKT)"
+	},
+	{
+	  "type" : "didRangeBeacons",
+	  "minor" : 0,
+	  "major" : 100,
+	  "uuid" : "74278BDA-B644-4520-8F0C-720EAF059935",
+	  "visitor_uuid" : "D7AD6E44-7A9E-4A76-9227-C16903E549A5",
+	  "created_at" : "Wed Jun 04 2014 15:39:30 GMT+0800 (HKT)"
+	},
+	{
+	  "type" : "didRangeBeacons",
+	  "minor" : 0,
+	  "major" : 100,
+	  "uuid" : "74278BDA-B644-4520-8F0C-720EAF059935",
+	  "visitor_uuid" : "D7AD6E44-7A9E-4A76-9227-C16903E549A5",
+	  "created_at" : "Wed Jun 04 2014 15:39:31 GMT+0800 (HKT)"
+	},
+	{
+	  "type" : "didRangeBeacons",
+	  "minor" : 0,
+	  "major" : 100,
+	  "uuid" : "74278BDA-B644-4520-8F0C-720EAF059935",
+	  "visitor_uuid" : "D7AD6E44-7A9E-4A76-9227-C16903E549A5",
+	  "created_at" : "Wed Jun 04 2014 15:39:32 GMT+0800 (HKT)"
+	},
+	{
+	  "type" : "didRangeBeacons",
+	  "minor" : 0,
+	  "major" : 100,
+	  "uuid" : "74278BDA-B644-4520-8F0C-720EAF059935",
+	  "visitor_uuid" : "D7AD6E44-7A9E-4A76-9227-C16903E549A5",
+	  "created_at" : "Wed Jun 04 2014 15:39:33 GMT+0800 (HKT)"
+	},
+	{
+	  "type" : "didExitRegion",
+	  "minor" : 0,
+	  "major" : 100,
+	  "uuid" : "74278BDA-B644-4520-8F0C-720EAF059935",
+	  "visitor_uuid" : "D7AD6E44-7A9E-4A76-9227-C16903E549A5",
+	  "created_at" : "Wed Jun 04 2014 15:39:40 GMT+0800 (HKT)"
+	}
+]

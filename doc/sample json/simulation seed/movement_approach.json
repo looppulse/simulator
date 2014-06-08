@@ -1,0 +1,32 @@
+{
+	"setup": {
+
+		"beacons": {
+
+			"beacon_alias1":{
+				"minor": 0,
+				"major": 12,
+				"uuid": "74278BDA-B644-4520-8F0C-720EAF059935",
+				"x": 34,
+				"y": 13
+			}
+
+		},
+		"mobiles": {
+
+			"mobile_alias1":{
+				"uuid": "D7AD6E44-7A9E-4A76-9227-C16903E549A5"
+			}
+
+		}
+	},
+	"movements": {
+		"mobile_alias1": [
+			{"x": 3, "y": 4, "time": "Wed Jun 04 2014 15:39:29 GMT+0800 (HKT)" }, //from a position, eg. entrance
+			{"x": 30, "y": 14, "time": "Wed Jun 04 2014 15:39:40 GMT+0800 (HKT)" }, //walk to a position
+			{"x": 30, "y": 14, "time": "Wed Jun 04 2014 15:42:40 GMT+0800 (HKT)" }, //stay for 3 minutes
+			{"x": 3, "y": 5, "time": "Wed Jun 04 2014 15:42:51 GMT+0800 (HKT)" } //walk back to entrance
+		]//,
+		//"beacon_alias1": [...] //Beacon can move too if necessary
+	}
+}
