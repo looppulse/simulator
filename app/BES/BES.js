@@ -22,13 +22,13 @@ if (Meteor.isClient) {
                     console.log(json);
                 }catch(ex){
                     message.text('Error: potentially invalid JSON \n(Please check if it is malformed JSON, eg. key is not included by double quotation mark, like {test: 1} or {\'test\': 1})');
-                    console.log(ex);
+                    console.error(ex);
                 }
             };
 
             reader.onerror = function(e){
                 message.text('Error: upload error');
-                console.log(e);
+                console.error(e);
             };
 
             reader.readAsText(file, "UTF8");
