@@ -8,29 +8,49 @@
 
 <template name="baseLayout">
   {{> nav_bar}}
-  <div id="content">
+  <div id="content" class="container">
+  	<br>
     {{> yield}}
   </div>
 </template>
 
 <template name="nav_bar">
-	<nav>
-		<ul>
-			<li><a href="{{pathFor 'normal'}}">normal</a></li>
-			<li><a href="{{pathFor 'live'}}">live</a></li>
-		</ul>
-	</nav>
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item" href="{{pathFor 'normal'}}">Normal Mode</a>
+          <a class="blog-nav-item" href="{{pathFor 'live'}}">Live Mode</a>
+        </nav>
+      </div>
+    </div>
 </template>
 
 <template name="normal">
+
 	<h1>Normal Simulation</h1>
+
+	<form role="form">
+
+		<div class="form-group">
+			<label for="exampleInputFile">JSON data</label>
+			<input id="json" type="file">
+			<p class="help-block">JSON data that specify the beacon events to send</p>
+		</div>
+
+		<input id="upload" class="btn btn-primary" type="button" value="upload">
+
+	</form>
+
+	<hr>
+
+	<h2>Message</h2>
 	<pre id="message"></pre>
-	<label for="json">Choose a json file:</label>
-	<br>
-	<input id="json" type="file">
-	<br><br>
-	<input id="upload" type="button" value="upload">
+
+	<hr>
+
+	<h2>JSON content</h2>
 	<pre id="json_content"></pre>
+
 </template>
 
 <template name="live">
