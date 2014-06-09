@@ -39,18 +39,18 @@
 			"mobile_alias1":[ //beacon_alias1 encounters mobile_alias1 for 2 times
 				{
 					"seconds_stayed" : 4,
-					"start_time" : "Wed Jun 05 2014 15:39:29 GMT+0800 (HKT)"
+					"start_time" : "2014-06-05 15:39:29"
 				},
 				{
 					"seconds_stayed" : 20,
-					"start_time" : "Wed Jun 06 2014 15:24:10 GMT+0800 (HKT)"
+					"start_time" : "2014-06-06 15:24:10"
 				}
 			],
 
 			"mobile_alias2":[ //beacon_alias1 encounters mobile_alias2 for 1 time
 				{
 					"seconds_stayed" : 27,
-					"start_time" : "Wed Jun 04 2014 15:39:29 GMT+0800 (HKT)"
+					"start_time" : "2014-06-04 15:39:29"
 				}
 			]
 
@@ -61,7 +61,7 @@
 			"mobile_alias2":[  //beacon_alias2 encounters mobile_alias2 for 1 time
 				{
 					"seconds_stayed" : 3,
-					"start_time" : "Wed Jun 04 2014 15:31:29 GMT+0800 (HKT)"
+					"start_time" : "2014-06-04 15:31:29"
 				}
 			]
 
