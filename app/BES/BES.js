@@ -101,6 +101,13 @@ function processSimulationSeed(json, beacon_event_handler){
 
 }
 
+
+
+
+
+
+
+
 if (Meteor.isClient) {
 
     var firebase = new Firebase('https://beacon-event-sim.firebaseio.com/');
@@ -154,6 +161,13 @@ if (Meteor.isClient) {
     });
 
 }
+
+
+
+
+
+
+
 
 if (Meteor.isServer) {
     Meteor.startup(function () {
