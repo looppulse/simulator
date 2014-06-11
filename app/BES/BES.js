@@ -1,3 +1,7 @@
+var FIREBASE_URL = 'https://beacon-event-sim.firebaseio.com/';
+
+
+
 /**
 By seconds stayed in proximity with a beacon before leaving, calculate number of "didRangeBeacons" and "didExitRegion" events to emit
 
@@ -107,10 +111,9 @@ function processSimulationSeed(json, beacon_event_handler){
 
 
 
-
 if (Meteor.isClient) {
 
-    var firebase = new Firebase('https://beacon-event-sim.firebaseio.com/');
+    var firebase = new Firebase(FIREBASE_URL);
 
 
     Template.normal.events({
@@ -125,6 +128,10 @@ if (Meteor.isClient) {
             message.text('');
             content.text('');
 
+            $('div#message, div#seed_content').hide();
+            $('div#message').fadeIn(300);
+            
+
             if(file){
                 var reader = new FileReader();
                 
@@ -133,28 +140,39 @@ if (Meteor.isClient) {
 
                         var json_text = e.target.result;
                         var json = $.parseJSON(json_text);
-                        message.text('Upload success');
-                        content.text( JSON.stringify(json, null, '    ') );
+                        message.text('Simulation seed upload success\nStart generating beacon events...\n\n');
+                        content.text( JSON.stringify(json, null, 4) );
                         console.log(json);
+
+                        var firebase_upload_log = '';
+
                         processSimulationSeed(json, function(beacon_event){ 
-                            firebase.push(beacon_event) 
+                            firebase.push(beacon_event);
+                            firebase_upload_log += '****Sent Beacon Event:\n';
+                            firebase_upload_log += JSON.stringify(beacon_event, null, 4);
+                            firebase_upload_log += '\n\n';
                         });
 
+                        message.text( message.text() + firebase_upload_log );
+                        $('div#seed_content').fadeIn(300);
+
                     }catch(ex){
-                        message.text('Error: potentially invalid JSON \n(Please check if it is malformed JSON, eg. key is not included by double quotation mark, like {test: 1} or {\'test\': 1})');
+                        //message.text('Error: potentially invalid JSON \n(Please check if it is malformed JSON, eg. key is not included by double quotation mark, like {test: 1} or {\'test\': 1})');
+                        message.text(ex.message);
                         console.error(ex);
                     }
                 };
 
                 reader.onerror = function(e){
-                    message.text('Error: upload error');
+                    //message.text('Error: upload error');
+                    message.text(e.message);
                     console.error(e);
                 };
 
                 reader.readAsText(file, "UTF8");
 
             }else{
-                message.text('Error: no file selected');
+                message.text('No file selected');
             }
         }
 
@@ -192,7 +210,7 @@ if (Meteor.isServer) {
                         var json = JSON.parse(data);
                         
                         //Use the firebase from NPM
-                        var firebase_npm = new Firebase('https://beacon-event-sim.firebaseio.com/');
+                        var firebase_npm = new Firebase(FIREBASE_URL);
 
                         processSimulationSeed(json, function(beacon_event){
                             firebase_npm.push().set(beacon_event);
