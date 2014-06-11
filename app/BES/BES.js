@@ -1,3 +1,10 @@
+/**
+By seconds stayed in proximity with a beacon before leaving, calculate number of "didRangeBeacons" and "didExitRegion" events to emit
+
+seconds_stayed : seconds stayed in proximity with a beacon before leaving
+
+return : a json specifying number of "didRangeBeacons" and "didExitRegion" should be emitted
+*/
 function calculateNumberOfRangeEventToSend(seconds_stayed){
 
     var t = seconds_stayed;
@@ -19,8 +26,12 @@ function calculateNumberOfRangeEventToSend(seconds_stayed){
 }
 
 /**
-json - the simulation seed that specify what beacon events to generate
-beacon_event_handler - function with signature "function(beacon_event)", get called when a beacon event is available
+Process simulation seed to generate each beacon event, and pass each beacon event to user-defined handler
+
+json : the simulation seed that specify what beacon events to generate
+beacon_event_handler : function with signature "function(beacon_event)", get called when a beacon event is available
+
+return : nothing
 */
 function processSimulationSeed(json, beacon_event_handler){
 
@@ -92,53 +103,56 @@ function processSimulationSeed(json, beacon_event_handler){
 
 if (Meteor.isClient) {
 
-  var firebase = new Firebase('https://beacon-event-sim.firebaseio.com/');
+    var firebase = new Firebase('https://beacon-event-sim.firebaseio.com/');
 
 
-  Template.normal.events({
-    'click input#upload': function(){
+    Template.normal.events({
 
-        var message = $('pre#message');
-        var content = $('pre#json_content');
+        'click input#upload': function(){
 
-        var file = $('input#json')[0].files[0];
+            var message = $('pre#message');
+            var content = $('pre#json_content');
 
-        message.text('');
-        content.text('');
+            var file = $('input#json')[0].files[0];
 
-        if(file){
-            var reader = new FileReader();
-            
-            reader.onload = function(e){
-                try{
+            message.text('');
+            content.text('');
 
-                    var json_text = e.target.result;
-                    var json = $.parseJSON(json_text);
-                    message.text('Upload success');
-                    content.text( JSON.stringify(json, null, '    ') );
-                    console.log(json);
-                    processSimulationSeed(json, function(beacon_event){ 
-                        firebase.push(beacon_event) 
-                    });
+            if(file){
+                var reader = new FileReader();
+                
+                reader.onload = function(e){
+                    try{
 
-                }catch(ex){
-                    message.text('Error: potentially invalid JSON \n(Please check if it is malformed JSON, eg. key is not included by double quotation mark, like {test: 1} or {\'test\': 1})');
-                    console.error(ex);
-                }
-            };
+                        var json_text = e.target.result;
+                        var json = $.parseJSON(json_text);
+                        message.text('Upload success');
+                        content.text( JSON.stringify(json, null, '    ') );
+                        console.log(json);
+                        processSimulationSeed(json, function(beacon_event){ 
+                            firebase.push(beacon_event) 
+                        });
 
-            reader.onerror = function(e){
-                message.text('Error: upload error');
-                console.error(e);
-            };
+                    }catch(ex){
+                        message.text('Error: potentially invalid JSON \n(Please check if it is malformed JSON, eg. key is not included by double quotation mark, like {test: 1} or {\'test\': 1})');
+                        console.error(ex);
+                    }
+                };
 
-            reader.readAsText(file, "UTF8");
+                reader.onerror = function(e){
+                    message.text('Error: upload error');
+                    console.error(e);
+                };
 
-        }else{
-            message.text('Error: no file selected');
+                reader.readAsText(file, "UTF8");
+
+            }else{
+                message.text('Error: no file selected');
+            }
         }
-    }
-  });
+
+    });
+
 }
 
 if (Meteor.isServer) {
@@ -150,9 +164,13 @@ if (Meteor.isServer) {
         if(path){
 
             console.log('##############START UP PARAMETER DETECTED############\n\nReading '+path+'\n');
+
             fs.readFile(path, 'utf8', function(err,data){ 
+
                 if (err) {
+
                    console.error(err);
+
                 }else{
 
                     try{
