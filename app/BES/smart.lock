@@ -4,7 +4,8 @@
     "basePackages": {
       "iron-router": {},
       "less-bootstrap-3": {},
-      "font-awesome-4-less": {}
+      "font-awesome-4-less": {},
+      "Firebase": {}
     },
     "packages": {
       "iron-router": {
@@ -21,6 +22,11 @@
         "git": "https://github.com/svub/fontawesome4-less.git",
         "tag": "v4.3.7",
         "commit": "21f60350cd238fb7053132f42409a3090f76939e"
+      },
+      "Firebase": {
+        "git": "https://github.com/dybskiy/meteor-firebase.git",
+        "tag": "v0.6.15.1",
+        "commit": "6b7084adc87ceb301a77a2f431fb996c7eedac34"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
