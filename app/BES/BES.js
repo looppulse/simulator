@@ -149,7 +149,7 @@ if (Meteor.isServer) {
 
         if(path){
 
-            console.log('##############START UP PARAMETER DETECTED############\n\nReading '+path);
+            console.log('##############START UP PARAMETER DETECTED############\n\nReading '+path+'\n');
             fs.readFile(path, 'utf8', function(err,data){ 
                 if (err) {
                    console.error(err);
@@ -164,6 +164,8 @@ if (Meteor.isServer) {
 
                         processSimulationSeed(json, function(beacon_event){
                             firebase_npm.push().set(beacon_event);
+                            console.log('****Sent Beacon Event:');
+                            console.log( JSON.stringify(beacon_event, null, 4), '\n');
                         } );
 
                     }catch(ex){
