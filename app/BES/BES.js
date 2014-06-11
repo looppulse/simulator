@@ -18,6 +18,10 @@ function calculateNumberOfRangeEventToSend(seconds_stayed){
 
 }
 
+/**
+json - the simulation seed that specify what beacon events to generate
+beacon_event_handler - function with signature "function(beacon_event)", get called when a beacon event is available
+*/
 function processSimulationSeed(json, beacon_event_handler){
 
     var beacons = json["setup"]["beacons"];
