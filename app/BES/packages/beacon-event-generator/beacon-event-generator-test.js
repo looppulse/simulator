@@ -116,6 +116,29 @@ function getBeaconEventsGeneratedFromSimulationSeed(seed){
 	return result;
 }
 
+Tinytest.add('Beg - All generated beacon event must have the fields: major, minor, uuid, visitor_uuid, type, created_at', function(test){
+
+	var result = getBeaconEventsGeneratedFromSimulationSeed(seed1);
+	_.each(result, function(event){
+		test.include(_.keys(event), 'major');
+		test.include(_.keys(event), 'minor');
+		test.include(_.keys(event), 'uuid');
+		test.include(_.keys(event), 'visitor_uuid');
+		test.include(_.keys(event), 'type');
+		test.include(_.keys(event), 'created_at');
+	});
+
+});
+
+Tinytest.add('Beg - Beacon events\' type can only be "didRangeBeacons" or "didExitRegion"', function(test){
+
+	var result = getBeaconEventsGeneratedFromSimulationSeed(seed1);
+	_.each(result, function(event){
+		test.include(["didRangeBeacons", "didExitRegion"], event.type);
+	});
+
+});
+
 Tinytest.add('Beg - A beacon event\'s minor, major and uuid should equal to that of the beacon which generates it', function(test){
 
 
@@ -230,7 +253,6 @@ Tinytest.add('Beg - should created all beacon events from multiple encounters of
 	
 	var result = getBeaconEventsGeneratedFromSimulationSeed(seed2);
 	test.equal(result.length, 2 + 3 + 6);
-	console.log(result);
 
 	_.each(result, function(event){
 		var i = result.indexOf(event);
@@ -306,7 +328,6 @@ Tinytest.add('Beg - should created all beacon events for encounters of different
 	
 	var result = getBeaconEventsGeneratedFromSimulationSeed(seed3);
 	test.equal(result.length, 3 + 2 + 4 + 6);
-	console.log(result);
 
 	var events_from_encounter_of_beaA_and_phoneA = _.filter(result, function(event){ return event.uuid == seed3.setup.beacons.beaA.uuid && event.visitor_uuid == seed3.setup.mobiles.phoneA.uuid });
 	var events_from_encounter_of_beaA_and_phoneB = _.filter(result, function(event){ return event.uuid == seed3.setup.beacons.beaA.uuid && event.visitor_uuid == seed3.setup.mobiles.phoneB.uuid });
