@@ -81,5 +81,5 @@ Some words on the Pros and Cons
 
 
 [1]: https://github.com/looppulse/simulator "Original coding challenge"
-[2]: https://github.com/jackkwong/simulator/blob/master/doc/sample%20json/simulation%20seed/stay_time_aproach_v2.json "Sample simulation seed"
+[2]: ./blob/master/doc/sample%20json/simulation%20seed/sample_simulation_seed_with_comments(not%20a%20valid%20json).json "Sample simulation seed with comments"
 [3]: http://win.meteor.com/ "Running meteor on windows"
