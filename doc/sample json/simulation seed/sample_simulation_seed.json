@@ -1,0 +1,72 @@
+{
+	
+	"setup": {
+
+		"beacons": {
+
+			"beacon_alias1": {
+				"minor": 0,
+				"major": 12,
+				"uuid": "74278BDA-B644-4520-8F0C-720EAF059935"
+			},
+
+			"beacon_alias2": {
+				"minor": 1,
+				"major": 12,
+				"uuid": "32R89U98-ID8F-4320-I9JU-G8U3RF87J3N8"
+			}
+
+		},
+
+		"mobiles": {
+
+			"mobile_alias1": {
+				"uuid": "D7AD6E44-7A9E-4A76-9227-C16903E549A5"
+			},
+
+			"mobile_alias2": {
+				"uuid": "Y567FTY8-3JGI-658G-84JT-0983UJDOIU3I"
+			}
+
+		}
+
+	},
+
+	"events_between": {
+
+		"beacon_alias1":{
+
+			"mobile_alias1":[
+				{
+					"seconds_stayed" : 4,
+					"start_time" : "2014-06-05 15:39:29"
+				},
+				{
+					"seconds_stayed" : 20,
+					"start_time" : "2014-06-06 15:24:10"
+				}
+			],
+
+			"mobile_alias2":[
+				{
+					"seconds_stayed" : 27,
+					"start_time" : "2014-06-04 15:39:29"
+				}
+			]
+
+		},
+
+		"beacon_alias2":{
+
+			"mobile_alias2":[
+				{
+					"seconds_stayed" : 3,
+					"start_time" : "2014-06-04 15:31:29"
+				}
+			]
+
+		}
+
+	}
+
+}
