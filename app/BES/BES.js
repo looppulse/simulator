@@ -1,11 +1,13 @@
-var FIREBASE_URL = 'https://beacon-event-sim.firebaseio.com/';
+var CONFIG = {
+    FIREBASE_URL: 'https://beacon-event-sim.firebaseio.com/'
+};
 
 
 
 
 if (Meteor.isClient) {
 
-    var firebase = new Firebase(FIREBASE_URL);
+    var firebase = new Firebase(CONFIG.FIREBASE_URL);
 
 
     Template.normal.events({
@@ -102,7 +104,7 @@ if (Meteor.isServer) {
                         var json = JSON.parse(data);
                         
                         //Use the firebase from NPM
-                        var firebase_npm = new Firebase(FIREBASE_URL);
+                        var firebase_npm = new Firebase(CONFIG.FIREBASE_URL);
 
                         Beg.processSimulationSeed(json, function(beacon_event){
                             firebase_npm.push().set(beacon_event);
