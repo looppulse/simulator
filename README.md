@@ -25,7 +25,7 @@ BES allows you to simulate events in two ways:
 
 2. Under terminal, cd into `app/BES`
 
-3. Execute `meteor --port=3000`, the BES server will start up and listen to the port 3000
+3. Execute `meteor --port=3000`, the BES server will start up and listen to the port 3000 (if it warns about missing packages, use `mrt add [PACKAGE_NAME]` to add the packages and then do this step again. As **windows users** may not be able to use `mrt`, so they will need to download the packages from [here][4], and put the packages into `app/BES/packages`, and then execute `meteor add [PACKAGE_NAME]`)
 
 4. Open a web browser and browse to `http://localhost:3000` 
 
@@ -39,7 +39,7 @@ BES allows you to simulate events in two ways:
 
 2. Under terminal, cd into `app/BES`
 
-3. Execute `JSON_PATH=[PATH_TO_YOUR_SIMULATION_SEED] meteor --port=3000`, the BES server will start up and process your simulation seed, you should see generated beacon events in your terminal and in your firebase endpoint right away.
+3. Execute `JSON_PATH=[PATH_TO_YOUR_SIMULATION_SEED] meteor --port=3000`, the BES server will start up and process your simulation seed, you should see generated beacon events in your terminal and in your firebase endpoint right away. (Read above if it complains about missing packages)
 
 
 
@@ -83,3 +83,4 @@ Some words on the Pros and Cons
 [1]: https://github.com/looppulse/simulator "Original coding challenge"
 [2]: doc/sample%20json/simulation%20seed/sample_simulation_seed_with_comments(not%20a%20valid%20json).json "Sample simulation seed with comments"
 [3]: http://win.meteor.com/ "Running meteor on windows"
+[4]: https://atmospherejs.com/ "Good place to download meteor packages"
