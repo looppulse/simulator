@@ -1,0 +1,4 @@
+/* CSS declarations go here */
+div#message, div#seed_content{
+	display: none;
+}

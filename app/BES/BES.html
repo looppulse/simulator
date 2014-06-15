@@ -1,0 +1,62 @@
+<head>
+  <title>BES</title>
+</head>
+
+<body>
+
+</body>
+
+<template name="baseLayout">
+  {{> nav_bar}}
+  <div id="content" class="container">
+  	<br>
+    {{> yield}}
+  </div>
+</template>
+
+<template name="nav_bar">
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item" href="{{pathFor 'normal'}}">Normal Mode</a>
+          <a class="blog-nav-item" href="{{pathFor 'live'}}">Live Mode</a>
+        </nav>
+      </div>
+    </div>
+</template>
+
+<template name="normal">
+
+	<h1>Normal Simulation</h1>
+
+	<form role="form">
+
+		<div class="form-group">
+			<label for="exampleInputFile">Simulation seed:</label>
+			<input id="json" type="file">
+			<p class="help-block">Simulation seed that specifies the beacon events to send</p>
+		</div>
+
+		<input id="upload" class="btn btn-primary" type="button" value="upload">
+
+	</form>
+
+
+	<div id="message">
+		<hr>
+		<h2>Message</h2>
+		<pre id="message"></pre>
+	</div>
+
+
+	<div id="seed_content">
+		<hr>
+		<h2>Simulation seed content</h2>
+		<pre id="json_content"></pre>
+	</div>
+
+</template>
+
+<template name="live">
+	<h1>This is live page</h1>
+</template>
